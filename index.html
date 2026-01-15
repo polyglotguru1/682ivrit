@@ -2,73 +2,164 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The 682 IVRIT HUB — בית הסהר</title>
 <style>
   :root {
     --bg-image: url('background.png');
     --cyan: #6fd2ff;
     --glow: rgba(111, 210, 255, 0.6);
-    --grid: rgba(111, 210, 255, 0.07);
-    --duration: 24s;
+    --glass: rgba(0, 0, 0, 0.75);
   }
+
+  * { box-sizing: border-box; }
 
   body {
-    /* Anchors the Hub Image as the fixed foundation */
+    margin: 0;
+    padding: 0;
     background: #000 var(--bg-image) no-repeat center center fixed;
     background-size: cover;
-    margin: 0; display: flex; align-items: center; justify-content: center;
-    height: 100vh; overflow: hidden; font-family: 'Courier New', monospace;
+    font-family: 'Courier New', monospace;
+    color: #fff;
+    overflow-x: hidden;
   }
 
-  /* Matrix Grid overlaying the Hub Image for ELS visualization */
-  .grid {
-    position: absolute; inset: 0;
-    background-image: linear-gradient(var(--grid) 1px, transparent 1px),
-                      linear-gradient(90deg, var(--grid) 1px, transparent 1px);
-    background-size: 40px 40px;
-    opacity: 0; animation: gridFade var(--duration) linear infinite;
-    z-index: 1;
-  }
-
-  .stage {
-    position: relative; width: 100%; height: 100%;
-    display: flex; align-items: center; justify-content: center;
-    z-index: 2;
-    /* Subtle darkening to help the '682' pop without hiding the background art */
-    background: rgba(0, 0, 0, 0.2);
-  }
-
-  .center-stack {
-    display: flex; flex-direction: column; align-items: center;
-    justify-content: center; text-align: center;
+  /* SECTION 1: THE TERMINAL */
+  .section-hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
 
   .num {
-    font-size: clamp(100px, 20vw, 160px); font-weight: 900; color: #fff;
-    opacity: 0; text-shadow: 0 0 50px var(--glow);
-    animation: assert var(--duration) linear infinite;
-    letter-spacing: 2px;
+    font-size: clamp(100px, 20vw, 160px);
+    font-weight: 900;
+    text-shadow: 0 0 50px var(--glow);
+    margin: 0;
   }
 
   .hey {
-    font-size: clamp(80px, 15vw, 120px); color: var(--cyan);
-    opacity: 0; animation: reveal var(--duration) linear infinite;
+    font-size: clamp(80px, 15vw, 120px);
+    color: var(--cyan);
     margin-top: -20px;
     text-shadow: 0 0 30px var(--cyan);
   }
 
-  @keyframes gridFade { 0%, 5% { opacity: 0; } 15%, 100% { opacity: 1; } }
-  @keyframes assert { 0%, 45% { opacity: 0; transform: scale(1.1); } 55%, 100% { opacity: 1; transform: scale(1); } }
-  @keyframes reveal { 0%, 58% { opacity: 0; transform: translateY(-20px); } 70%, 100% { opacity: 1; transform: translateY(0); } }
+  .scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    font-size: 14px;
+    letter-spacing: 3px;
+    animation: bounce 2s infinite;
+    opacity: 0.7;
+  }
+
+  /* SECTION 2: CONTACT & UPDATES */
+  .section-content {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--glass); /* Dark overlay for readability */
+    backdrop-filter: blur(5px);
+    padding: 40px 20px;
+  }
+
+  .contact-card {
+    width: 100%;
+    max-width: 500px;
+    border: 1px solid var(--cyan);
+    padding: 40px;
+    box-shadow: 0 0 20px rgba(111, 210, 255, 0.2);
+  }
+
+  h2 {
+    color: var(--cyan);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .form-group { margin-bottom: 20px; }
+
+  label { display: block; margin-bottom: 8px; font-size: 12px; color: var(--cyan); }
+
+  input, textarea {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(111, 210, 255, 0.3);
+    padding: 12px;
+    color: #fff;
+    font-family: inherit;
+  }
+
+  input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--cyan);
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  button {
+    width: 100%;
+    background: transparent;
+    border: 1px solid var(--cyan);
+    color: var(--cyan);
+    padding: 15px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.3s;
+  }
+
+  button:hover {
+    background: var(--cyan);
+    color: #000;
+    box-shadow: 0 0 15px var(--cyan);
+  }
+
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-10px);}
+    60% {transform: translateY(-5px);}
+  }
 </style>
 </head>
 <body>
-  <div class="grid"></div>
-  <div class="stage">
-    <div class="center-stack">
-      <div class="num">682</div>
-      <div class="hey">ה</div>
+
+  <div class="section-hero">
+    <div class="num">682</div>
+    <div class="hey">ה</div>
+    <div class="scroll-indicator">SCROLL TO UNLOCK ↓</div>
+  </div>
+
+  <div class="section-content">
+    <div class="contact-card">
+      <h2>Contact & Updates</h2>
+      <p style="font-size: 13px; margin-bottom: 30px; text-align: center; opacity: 0.8;">
+        Join the 682 IVRIT mailing list for ELS discoveries and Hub updates.
+      </p>
+      
+      <form action="https://formspree.io/f/your-id" method="POST">
+        <div class="form-group">
+          <label>NAME</label>
+          <input type="text" name="name" required placeholder="IDENTIFY...">
+        </div>
+        <div class="form-group">
+          <label>EMAIL</label>
+          <input type="email" name="email" required placeholder="CONTACT_PATH...">
+        </div>
+        <div class="form-group">
+          <label>MESSAGE (OPTIONAL)</label>
+          <textarea name="message" rows="4" placeholder="TRANSMISSION..."></textarea>
+        </div>
+        <button type="submit">Send Transmission</button>
+      </form>
     </div>
   </div>
+
 </body>
 </html>
