@@ -9,7 +9,7 @@
   :root {
     --bg-image: url('background.png');
     --cyan: #6fd2ff;
-    --glass: rgba(0, 0, 0, 0.9);
+    --glass: rgba(0, 0, 0, 0.85);
   }
 
   * { box-sizing: border-box; }
@@ -17,15 +17,15 @@
   body {
     margin: 0;
     padding: 0;
-    /* 'contain' ensures your entire header and footer stay visible */
-    background: #000 var(--bg-image) no-repeat center top fixed;
-    background-size: contain;
+    /* Fixed artwork as the sole foundation */
+    background: #000 var(--bg-image) no-repeat center center fixed;
+    background-size: cover;
     font-family: 'Courier New', monospace;
     color: #fff;
     overflow-x: hidden;
   }
 
-  /* PAGE 1: FULL VIEW OF YOUR ARTWORK */
+  /* PAGE 1: COMPLETELY EMPTY TO SHOW YOUR IMAGE ONLY */
   .section-hero {
     height: 100vh;
     display: flex;
@@ -35,11 +35,12 @@
   }
 
   .scroll-hint {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     font-size: 11px;
     letter-spacing: 4px;
     opacity: 0.5;
     text-transform: uppercase;
+    /* Black shadow ensures text is visible against light parts of your image */
     text-shadow: 2px 2px 4px #000;
   }
 
@@ -50,17 +51,17 @@
     align-items: center;
     justify-content: center;
     background: var(--glass); 
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(10px);
     padding: 60px 20px;
   }
 
   .contact-card {
     width: 100%;
     max-width: 600px;
-    border: 1px solid rgba(111, 210, 255, 0.2);
+    border: 1px solid rgba(111, 210, 255, 0.3);
     padding: 50px;
     text-align: center;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.7);
   }
 
   h2 {
