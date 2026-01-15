@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +8,6 @@
   :root {
     --bg-image: url('background.png');
     --cyan: #6fd2ff;
-    --glow: rgba(111, 210, 255, 0.6);
     --glass: rgba(0, 0, 0, 0.85);
   }
 
@@ -18,7 +16,7 @@
   body {
     margin: 0;
     padding: 0;
-    /* Fixed wallpaper foundation */
+    /* This keeps your 682/Hey artwork as the fixed base */
     background: #000 var(--bg-image) no-repeat center center fixed;
     background-size: cover;
     font-family: 'Courier New', monospace;
@@ -26,49 +24,31 @@
     overflow-x: hidden;
   }
 
-  /* PAGE 1: STATIC HUB ENTRANCE */
+  /* PAGE 1: COMPLETELY TRANSPARENT TO SHOW BACKGROUND ONLY */
   .section-hero {
     height: 100vh;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    align-items: flex-end; /* Places hint at the bottom */
     justify-content: center;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.1); /* Slight darken for readability */
-  }
-
-  .num {
-    font-size: clamp(100px, 20vw, 160px);
-    font-weight: 900;
-    text-shadow: 0 0 40px var(--glow);
-    margin: 0;
-    opacity: 1; /* Animation removed */
-  }
-
-  .hey {
-    font-size: clamp(80px, 15vw, 120px);
-    color: var(--cyan);
-    margin-top: -10px;
-    text-shadow: 0 0 25px var(--cyan);
-    opacity: 1; /* Animation removed */
+    background: transparent;
   }
 
   .scroll-hint {
-    position: absolute;
-    bottom: 40px;
+    margin-bottom: 40px;
     font-size: 12px;
     letter-spacing: 5px;
     opacity: 0.6;
     text-transform: uppercase;
+    text-shadow: 0 0 10px #000;
   }
 
-  /* PAGE 2: CONTACT & INQUIRIES */
+  /* PAGE 2: CONTACT SECTION */
   .section-content {
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--glass);
+    background: var(--glass); /* Dims the background here for readability */
     backdrop-filter: blur(8px);
     padding: 60px 20px;
   }
@@ -79,7 +59,7 @@
     border: 1px solid rgba(111, 210, 255, 0.4);
     padding: 50px;
     text-align: center;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.6);
   }
 
   h2 {
@@ -103,7 +83,6 @@
   .email-link:hover {
     color: var(--cyan);
     text-shadow: 0 0 10px var(--cyan);
-    border-bottom-color: #fff;
   }
 
   .sub-text {
@@ -117,8 +96,6 @@
 <body>
 
   <div class="section-hero">
-    <div class="num">682</div>
-    <div class="hey">ה</div>
     <div class="scroll-hint">Scroll for Inquiries</div>
   </div>
 
