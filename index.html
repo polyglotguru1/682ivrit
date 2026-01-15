@@ -1,15 +1,8 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The 682 IVRIT HUB — בית הסהר</title>
 <style>
   :root {
     --bg-image: url('background.png');
     --cyan: #6fd2ff;
-    --glass: rgba(0, 0, 0, 0.85);
+    --glass: rgba(0, 0, 0, 0.95);
   }
 
   * { box-sizing: border-box; }
@@ -17,15 +10,15 @@
   body {
     margin: 0;
     padding: 0;
-    /* Fixed artwork as the sole foundation */
-    background: #000 var(--bg-image) no-repeat center center fixed;
-    background-size: cover;
+    /* 'contain' ensures the image never stretches beyond its original proportions */
+    background: #000 var(--bg-image) no-repeat center top fixed;
+    background-size: contain; 
     font-family: 'Courier New', monospace;
     color: #fff;
     overflow-x: hidden;
   }
 
-  /* PAGE 1: COMPLETELY EMPTY TO SHOW YOUR IMAGE ONLY */
+  /* PAGE 1: FULL VIEW OF YOUR ARTWORK */
   .section-hero {
     height: 100vh;
     display: flex;
@@ -35,12 +28,11 @@
   }
 
   .scroll-hint {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     font-size: 11px;
     letter-spacing: 4px;
     opacity: 0.5;
     text-transform: uppercase;
-    /* Black shadow ensures text is visible against light parts of your image */
     text-shadow: 2px 2px 4px #000;
   }
 
@@ -51,17 +43,17 @@
     align-items: center;
     justify-content: center;
     background: var(--glass); 
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(20px);
     padding: 60px 20px;
   }
 
   .contact-card {
     width: 100%;
     max-width: 600px;
-    border: 1px solid rgba(111, 210, 255, 0.3);
+    border: 1px solid rgba(111, 210, 255, 0.2);
     padding: 50px;
     text-align: center;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.8);
   }
 
   h2 {
@@ -88,27 +80,3 @@
     margin-top: 30px;
   }
 </style>
-</head>
-<body>
-
-  <div class="section-hero">
-    <div class="scroll-hint">Scroll for Inquiries</div>
-  </div>
-
-  <div class="section-content">
-    <div class="contact-card">
-      <h2>Inquiries & Updates</h2>
-      <p class="sub-text">
-        Regarding ELS Discoveries, Bible Code Research, and The 682 IVRIT Hub Development:
-      </p>
-      
-      <a href="mailto:682ivrit@gmail.com" class="email-link">682ivrit@gmail.com</a>
-      
-      <p class="sub-text" style="margin-top: 50px; font-size: 10px; letter-spacing: 2px;">
-        SYSTEM STATUS: ONLINE — בית הסהר
-      </p>
-    </div>
-  </div>
-
-</body>
-</html>
