@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The 682 IVRIT HUB — בית הסהר</title>
 <style>
+  <style>
   :root {
     --bg-image: url('background.png');
     --cyan: #6fd2ff;
@@ -17,9 +18,9 @@
   body {
     margin: 0;
     padding: 0;
-    /* 100% auto ensures the header at the top is never cut off */
+    /* 'cover' fills the screen, 'center top' ensures the header is seen first */
     background: #000 var(--bg-image) no-repeat center top fixed;
-    background-size: 100% auto;
+    background-size: cover;
     font-family: 'Courier New', monospace;
     color: #fff;
     overflow-x: hidden;
@@ -86,11 +87,7 @@
     line-height: 1.6;
     margin-top: 30px;
   }
-
-  /* Mobile Adjustment to prevent image stretching */
-  @media (max-width: 768px) {
-    body { background-size: cover; }
-  }
+</style>
 </style>
 </head>
 <body>
